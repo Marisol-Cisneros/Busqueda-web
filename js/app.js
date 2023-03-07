@@ -21,3 +21,14 @@ const loadWeb = () => {
         .then(response => console.log(response))
         .catch(err => console.error(err));
 }
+const creaTarjetas = () => {
+    topBusqueda.forEach((lugar) => {
+    //Busqueda.querySelector('img').setAttribute('src', artista.url.displayImageUri)
+    Busqueda.querySelectorAll('p')[0].textContent = lugar.value[0].webpageUrl
+
+    Busqueda.querySelectorAll('p')[1].textContent = lugar.value[1].webpageUrl
+    const clone = Busqueda.cloneNode(true)
+    fragment.appendChild(clone)
+    })
+    Llamada.appendChild(fragment)
+}
