@@ -16,7 +16,7 @@ const loadWeb = () => {
         }
     };
     
-    fetch('http://localhost:5501/js/Api.json', options)
+    fetch('https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=taylor%20swift&pageNumber=1&pageSize=10&autoCorrect=true, options')
         .then(response => response.json())
         .then(response =>{
             topBusqueda = response.value
@@ -28,7 +28,7 @@ const creaTarjetas = () => {
     topBusqueda.forEach((lugar) => {
     //Busqueda.querySelector('img').setAttribute('src', artista.url.displayImageUri)
     Busqueda.querySelectorAll('p')[0].textContent = lugar.title.thumbnail
-    Busqueda.querySelectorAll('p')[1].textContent = lugar.title
+    Busqueda.querySelectorAll('p')[1].textContent = lugar.title.name
 
     const clone = Busqueda.cloneNode(true)
     fragment.appendChild(clone)
